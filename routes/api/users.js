@@ -11,7 +11,7 @@ const router = express.Router();
 //   res.json({ message: "template message" });
 // });
 
-router.post("/", ctrl.signup);
+router.post("/signup", ctrl.signup);
 
 // router.delete("/:contactId", async (req, res, next) => {
 //   res.json({ message: "template message" });
