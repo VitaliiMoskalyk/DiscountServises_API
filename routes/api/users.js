@@ -17,8 +17,6 @@ router.post("/signup", ctrl.signup);
 //   res.json({ message: "template message" });
 // });
 
-// router.put("/:contactId", async (req, res, next) => {
-//   res.json({ message: "template message" });
-// });
+router.put("/verify", ctrl.verify);
 
 module.exports = router;

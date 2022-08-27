@@ -25,13 +25,17 @@ const User = Schema(
     //   default: null,
     // },
     // avatarURL: String,
-    // verify: {
-    //   type: Boolean,
-    //   default: false,
-    // },
+    verify: {
+      type: Boolean,
+      default: false,
+    },
     verificationToken: {
       type: String,
       required: [true, "Verify token is required"],
+    },
+    verificationCode: {
+      type: String,
+      required: [true, "Verification code is required"],
     },
   },
   { versionKey: false, timestamps: true }
@@ -42,6 +46,8 @@ const JoiUserSchema = Joi.object({
   email: Joi.string().pattern(regexExpression).required(),
   name: Joi.string().min(6).max(10).required(),
   token: Joi.string(),
+  verificationCode: Joi.string().min(6).max(20),
+  verify: Joi.boolean(),
 });
 
 const JoiVerifySchema = Joi.object({
